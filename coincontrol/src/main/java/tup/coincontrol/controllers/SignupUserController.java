@@ -21,7 +21,7 @@ public class SignupUserController {
     public ResponseEntity<?> createUser(@RequestBody SignupRequest signupRequest){
         UserDTO createdUser = authService.createUser(signupRequest);
         if(createdUser==null)
-            return new ResponseEntity<>("Usuario no encontrado, pruebe nuevamente", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Campo incorrecto o vacio, pruebe nuevamente", HttpStatus.BAD_REQUEST);
             return new ResponseEntity<>(createdUser,HttpStatus.CREATED);
         
     }
